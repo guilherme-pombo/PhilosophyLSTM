@@ -1,5 +1,5 @@
 # PhilosophyLSTM
-Can a LSTM philosophise? Answer: Not really haha. Training a LSTM on Plato's "The Republic". Inspired after reading Andrej Karpathy's arcticle on LSTMs http://karpathy.github.io/2015/05/21/rnn-effectiveness/ 
+Can a LSTM philosophise? Answer: Not really haha. Training a LSTM on Plato's "The Republic". Inspired after reading Andrej Karpathy's arcticle on LSTMs http://karpathy.github.io/2015/05/21/rnn-effectiveness/ . Basically what we're training is a character-level language model. "We feed the LSTM a chunk of text and ask it to model the probability distribution of the next character in the sequence given a sequence of previous characters. This will then allow us to generate new text one character at a time."
 
 # Notes
 
