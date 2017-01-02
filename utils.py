@@ -5,16 +5,19 @@ File that contains various utility functions
 """
 
 
-def sample(a, temperature=1.0):
+def sample(probs, temperature=1.0):
     """
     Sample an index from a list of probabilities
+    Decreasing the temperature from 1 to some lower number (e.g. 0.5) makes the RNN more confident,
+    but also more conservative in its samples. Conversely, higher temperatures will give more diversity
+    but at cost of more mistakes (e.g. spelling mistakes, etc)
     :param a:
     :param temperature:
     :return:
     """
-    a = np.log(a) / temperature
-    a = np.exp(a) / np.sum(np.exp(a))
-    return np.argmax(np.random.multinomial(1, a, 1))
+    probs = np.log(probs) / temperature
+    probs = np.exp(probs) / np.sum(np.exp(probs))
+    return np.argmax(np.random.multinomial(1, probs, 1))
 
 
 # train the model, output generated text after each iteration
